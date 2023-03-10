@@ -35,3 +35,35 @@ export default function Home({ allPostsData }) {
         </Layout>
     );
 }
+
+////Per request server-side-rendering
+////https://nextjs.org/docs/basic-features/data-fetching/overview#getserversideprops-server-side-rendering
+//
+// function Page({ data }) {
+//     // Render data...
+//   }
+//
+//   // This gets called on every request
+//   export async function getServerSideProps() {
+//     // Fetch data from external API
+//     const res = await fetch(`https://.../data`)
+//     const data = await res.json()
+//
+//     // Pass data to the page via props
+//     return { props: { data } }
+//   }
+//
+//   export default Page
+
+////Client side rendering
+////https://swr.vercel.app/
+//
+//import useSWR from 'swr';
+//
+//function Profile() {
+//  const { data, error } = useSWR('/api/user', fetch);
+//
+//  if (error) return <div>failed to load</div>;
+//  if (!data) return <div>loading...</div>;
+//  return <div>hello {data.name}!</div>;
+//}
